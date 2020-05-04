@@ -1,0 +1,4 @@
+key_function.c:46:16:Get_Key_Value	16	static
+key_function.c:73:6:Get_Key_Time_Value	4	static
+key_function.c:87:6:Get_Key_Event	4	static
+key_function.c:114:6:Key_EdgeJudge	8	static
