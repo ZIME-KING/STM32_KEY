@@ -1,18 +1,7 @@
-/**
- *
- */
-
-/* Includes ------------------------------------------------------------------*/
 #include "key_function.h"
-/* Private typedef -----------------------------------------------------------*/
 
-/* Private define ------------------------------------------------------------*/
 
-//规定一下
-//宏定义：全大写
-//函数首：字母大写
-//变量：全小写
-//GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_3) 读取函数
+
 #define KEY0_READ 	HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_7)
 #define KEY1_READ 	HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_6)
 #define KEY2_READ 	HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_5)
@@ -26,15 +15,8 @@
 
 #define FALL_EDGE 0xF0
 #define RISE_EDGE 0x0F
-/* Private macro -------------------------------------------------------------*/
 
-/* Private variables ---------------------------------------------------------*/
 
-/* Private function prototypes -----------------------------------------------*/
-
-/* Private functions ---------------------------------------------------------*/
-
-/* Public functions ---------------------------------------------------------*/
 
 KEY_TypeDef key[KEY_NUMBER]; //结构体包含按键状态值
 
@@ -43,8 +25,8 @@ KEY_TypeDef key[KEY_NUMBER]; //结构体包含按键状态值
  **输入按键的编号
  **返回值：1/0
  ********************/
-static uint8_t Get_Key_Value(unsigned char aa) {
-	switch (aa) {
+static uint8_t Get_Key_Value(unsigned char temp) {
+	switch (temp) {
 	case 0:
 		return KEY0_READ;
 		break;
@@ -67,9 +49,9 @@ static uint8_t Get_Key_Value(unsigned char aa) {
 	}
 }
 
-/***********
+/********************************
  函数功能：获取键按下 和抬起时间的值
- *********/
+ *******************************/
 void Get_Key_Time_Value() {
 	static uint8_t i;						//加了static进入函数不会给清零，要么整个全局边量
 	for (i = 0; i < KEY_NUMBER; i++) {
@@ -84,6 +66,9 @@ void Get_Key_Time_Value() {
 	}
 }
 
+/************************
+ 函数功能：获取键按下的事件
+ ***********************/
 void Get_Key_Event() {
 	static uint8_t i;
 	for (i = 0; i < KEY_NUMBER; i++) {
@@ -115,6 +100,8 @@ void Key_EdgeJudge() {
 	static uint8_t i;
 
 	for (i = 0; i < KEY_NUMBER; i++) {
+
+
 		//持续按判断
 		if (key[i].time_down > LONG_LONG_TIME) {
 			key[i].event = 3;
@@ -128,8 +115,8 @@ void Key_EdgeJudge() {
 
 		//边沿检测
 		key[i].count <<= 1;					//放弃最老的值
-		if (Get_Key_Value(i) == SET)			//写入新的值
-			key[i].count++;   		//最低位加1   0000 0000->0000,0001->0000 0011
+		if (Get_Key_Value(i) == SET)		//写入新的值
+			key[i].count++;   				//最低位加1   0000 0000->0000,0001->0000 0011
 
 		//下降沿判断
 		if (key[i].count == FALL_EDGE) {

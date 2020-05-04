@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00008ffd  00000000  00000000  00020035  2**0
+ 12 .debug_info   00008ffe  00000000  00000000  00020035  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00001756  00000000  00000000  00029032  2**0
+ 13 .debug_abbrev 00001756  00000000  00000000  00029033  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000b20  00000000  00000000  0002a788  2**3
+ 14 .debug_aranges 00000b20  00000000  00000000  0002a790  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000a58  00000000  00000000  0002b2a8  2**3
+ 15 .debug_ranges 00000a58  00000000  00000000  0002b2b0  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  000136f9  00000000  00000000  0002bd00  2**0
+ 16 .debug_macro  000136f9  00000000  00000000  0002bd08  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0000770c  00000000  00000000  0003f3f9  2**0
+ 17 .debug_line   000076ef  00000000  00000000  0003f401  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0006d9ce  00000000  00000000  00046b05  2**0
+ 18 .debug_str    0006d9f2  00000000  00000000  00046af0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  000b44d3  2**0
+ 19 .comment      0000007b  00000000  00000000  000b44e2  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00002dfc  00000000  00000000  000b4550  2**2
+ 20 .debug_frame  00002dfc  00000000  00000000  000b4560  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -6182,13 +6182,13 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  **输入按键的编号
  **返回值：1/0
  ********************/
-static uint8_t Get_Key_Value(unsigned char aa) {
+static uint8_t Get_Key_Value(unsigned char temp) {
  8002204:	b580      	push	{r7, lr}
  8002206:	b082      	sub	sp, #8
  8002208:	af00      	add	r7, sp, #0
  800220a:	4603      	mov	r3, r0
  800220c:	71fb      	strb	r3, [r7, #7]
-	switch (aa) {
+	switch (temp) {
  800220e:	79fb      	ldrb	r3, [r7, #7]
  8002210:	2b03      	cmp	r3, #3
  8002212:	d823      	bhi.n	800225c <Get_Key_Value+0x58>
@@ -6250,9 +6250,9 @@ static uint8_t Get_Key_Value(unsigned char aa) {
 
 0800226c <Get_Key_Time_Value>:
 
-/***********
+/********************************
  函数功能：获取键按下 和抬起时间的值
- *********/
+ *******************************/
 void Get_Key_Time_Value() {
  800226c:	b480      	push	{r7}
  800226e:	af00      	add	r7, sp, #0
@@ -6390,6 +6390,9 @@ void Get_Key_Time_Value() {
 
 08002364 <Get_Key_Event>:
 
+/************************
+ 函数功能：获取键按下的事件
+ ***********************/
 void Get_Key_Event() {
  8002364:	b480      	push	{r7}
  8002366:	af00      	add	r7, sp, #0
@@ -6627,6 +6630,8 @@ void Key_EdgeJudge() {
  8002502:	2200      	movs	r2, #0
  8002504:	701a      	strb	r2, [r3, #0]
  8002506:	e100      	b.n	800270a <Key_EdgeJudge+0x20e>
+
+
 		//持续按判断
 		if (key[i].time_down > LONG_LONG_TIME) {
  8002508:	4b83      	ldr	r3, [pc, #524]	; (8002718 <Key_EdgeJudge+0x21c>)
@@ -6716,7 +6721,7 @@ void Key_EdgeJudge() {
  800259e:	3302      	adds	r3, #2
  80025a0:	4602      	mov	r2, r0
  80025a2:	701a      	strb	r2, [r3, #0]
-		if (Get_Key_Value(i) == SET)			//写入新的值
+		if (Get_Key_Value(i) == SET)		//写入新的值
  80025a4:	4b5c      	ldr	r3, [pc, #368]	; (8002718 <Key_EdgeJudge+0x21c>)
  80025a6:	781b      	ldrb	r3, [r3, #0]
  80025a8:	4618      	mov	r0, r3
@@ -6724,7 +6729,7 @@ void Key_EdgeJudge() {
  80025ae:	4603      	mov	r3, r0
  80025b0:	2b01      	cmp	r3, #1
  80025b2:	d115      	bne.n	80025e0 <Key_EdgeJudge+0xe4>
-			key[i].count++;   		//最低位加1   0000 0000->0000,0001->0000 0011
+			key[i].count++;   				//最低位加1   0000 0000->0000,0001->0000 0011
  80025b4:	4b58      	ldr	r3, [pc, #352]	; (8002718 <Key_EdgeJudge+0x21c>)
  80025b6:	781b      	ldrb	r3, [r3, #0]
  80025b8:	461a      	mov	r2, r3

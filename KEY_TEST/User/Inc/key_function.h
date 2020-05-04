@@ -6,8 +6,8 @@
 #define KEY_NUMBER 4
 typedef struct
 {
-    uint8_t  event;   	 		 //按键输出事件 1短按，2长按，3，超长按，4双击，5三击 0空闲
-    uint8_t  edge_flag; 		 //边沿标记 1上升 2下降
+    uint8_t  event;   	 		 //按键输出事件 1短按，2长按，3超长按，4双击，5三击 ，0空闲
+    uint8_t  edge_flag; 		 //边沿标记  1上升 2下降
 	uint8_t  count; 	 		 //边沿检测
 	uint16_t time_up_pre[2]; 	 //保存最近2次抬起的时间用来判断连击
 	uint16_t time_down_pre; 	 //保存最近1次按下的时间

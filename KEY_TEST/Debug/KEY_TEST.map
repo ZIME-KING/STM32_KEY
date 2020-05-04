@@ -2879,7 +2879,7 @@ LOAD d:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000329       0x1d d:/st/stm32cubeide_1.2.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(KEY_TEST.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x8ffd
+.debug_info     0x0000000000000000     0x8ffe
  .debug_info    0x0000000000000000      0xd49 Core/Src/main.o
  .debug_info    0x0000000000000d49      0xc61 Core/Src/stm32f1xx_hal_msp.o
  .debug_info    0x00000000000019aa      0x6b4 Core/Src/stm32f1xx_it.o
@@ -2892,7 +2892,7 @@ OUTPUT(KEY_TEST.elf elf32-littlearm)
  .debug_info    0x000000000000457c     0x2456 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_info    0x00000000000069d2     0x1104 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_info    0x0000000000007ad6     0x11e3 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_info    0x0000000000008cb9      0x344 User/Src/key_function.o
+ .debug_info    0x0000000000008cb9      0x345 User/Src/key_function.o
 
 .debug_abbrev   0x0000000000000000     0x1756
  .debug_abbrev  0x0000000000000000      0x257 Core/Src/main.o
@@ -3004,7 +3004,7 @@ OUTPUT(KEY_TEST.elf elf32-littlearm)
  .debug_macro   0x00000000000134ef      0x1f4 User/Src/key_function.o
  .debug_macro   0x00000000000136e3       0x16 User/Src/key_function.o
 
-.debug_line     0x0000000000000000     0x770c
+.debug_line     0x0000000000000000     0x76ef
  .debug_line    0x0000000000000000      0x762 Core/Src/main.o
  .debug_line    0x0000000000000762      0x6a2 Core/Src/stm32f1xx_hal_msp.o
  .debug_line    0x0000000000000e04      0x6fe Core/Src/stm32f1xx_it.o
@@ -3017,9 +3017,9 @@ OUTPUT(KEY_TEST.elf elf32-littlearm)
  .debug_line    0x0000000000003dc4     0x16d5 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
  .debug_line    0x0000000000005499      0xc22 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
  .debug_line    0x00000000000060bb      0xf1a Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
- .debug_line    0x0000000000006fd5      0x737 User/Src/key_function.o
+ .debug_line    0x0000000000006fd5      0x71a User/Src/key_function.o
 
-.debug_str      0x0000000000000000    0x6d9ce
+.debug_str      0x0000000000000000    0x6d9f2
  .debug_str     0x0000000000000000    0x6afc3 Core/Src/main.o
                                       0x6b2c9 (size before relaxing)
  .debug_str     0x000000000006afc3      0x31e Core/Src/stm32f1xx_hal_msp.o
@@ -3044,8 +3044,8 @@ OUTPUT(KEY_TEST.elf elf32-littlearm)
                                       0x6b308 (size before relaxing)
  .debug_str     0x000000000006d348      0x516 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
                                       0x6b22c (size before relaxing)
- .debug_str     0x000000000006d85e      0x170 User/Src/key_function.o
-                                      0x6abc6 (size before relaxing)
+ .debug_str     0x000000000006d85e      0x194 User/Src/key_function.o
+                                      0x6abaf (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
  .comment       0x0000000000000000       0x7b Core/Src/main.o

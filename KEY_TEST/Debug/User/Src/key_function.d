@@ -1,6 +1,6 @@
 User/Src/key_function.o: ../User/Src/key_function.c \
- C:/Users/Administrator/Desktop/CubeIDE\ workspace/KEY_TEST/User/Inc/key_function.h \
- ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+ D:/GIT_ALL/STM32_KEY/KEY_TEST/User/Inc/key_function.h ../Core/Inc/main.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -25,7 +25,7 @@ User/Src/key_function.o: ../User/Src/key_function.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-C:/Users/Administrator/Desktop/CubeIDE\ workspace/KEY_TEST/User/Inc/key_function.h:
+D:/GIT_ALL/STM32_KEY/KEY_TEST/User/Inc/key_function.h:
 
 ../Core/Inc/main.h:
 

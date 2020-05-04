@@ -41,8 +41,8 @@ KEY_TEST.bin \
 all: KEY_TEST.elf secondary-outputs
 
 # Tool invocations
-KEY_TEST.elf: $(OBJS) $(USER_OBJS) C:\Users\Administrator\Desktop\CubeIDE\ workspace\KEY_TEST\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "KEY_TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Administrator\Desktop\CubeIDE workspace\KEY_TEST\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="KEY_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+KEY_TEST.elf: $(OBJS) $(USER_OBJS) D:\GIT_ALL\STM32_KEY\KEY_TEST\STM32F103C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "KEY_TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\GIT_ALL\STM32_KEY\KEY_TEST\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="KEY_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
